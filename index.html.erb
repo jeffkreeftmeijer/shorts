@@ -1,0 +1,11 @@
+<ol>
+  <% @articles.sort{ |a| a.metadata['date'] }.each do |article| %>
+    <li class="<%= article.metadata['type'].downcase || "other"%> article">
+      <h2>
+        <a href="<%= article.url %>">
+          <%= article.metadata['title'] %>
+        </a>
+      </h2>
+    </li>
+  <% end%> 
+</ol>

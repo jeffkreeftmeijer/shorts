@@ -1,0 +1,25 @@
+GIT
+  remote: git@github.com:jeffkreeftmeijer/dracula.git
+  revision: e2f7eb3385a216acbc9df44bc555c01e4d8e8506
+  specs:
+    dracula (0.1.0)
+      pygments.rb (~> 0.4.2)
+      redcarpet (~> 2.2.2)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    posix-spawn (0.3.9)
+    pygments.rb (0.4.2)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
+    rake (10.3.2)
+    redcarpet (2.2.2)
+    yajl-ruby (1.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dracula!
+  rake

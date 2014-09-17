@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>
+      <% if title = @current.metadata['title'] %>
+        <% if type = @current.metadata['type'] %>
+          <%= type %>:
+        <% end %>
+        <%= title.gsub(/<[^>]*>/, '') %> —
+      <% end %>
+      wtf. by Jeff Kreeftmeijer
+    </title>
+    <meta name="viewport" content="initial-scale=1, user-scalable=yes">
+  </head>
+  <body>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <h1><a href="/">wtf.</a> by <a href="http://jeffkreeftmeijer.com">Jeff Kreeftmeijer</a></h1>
+
+    <%= yield %>
+</body>
+</html>
