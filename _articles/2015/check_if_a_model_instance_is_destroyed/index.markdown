@@ -1,22 +1,22 @@
 Ever do something like this?
 
 ``` ruby
-  delete :destroy
-  Session.exist?(@session).should.be.false
+delete :destroy
+Session.exist?(@session).should.be.false
 ```
 
 Or this:
 
 ``` ruby
-  lambda {
-    delete :destroy
-  }.should.change('Session.count' -1)
+lambda {
+  delete :destroy
+}.should.change('Session.count' -1)
 ```
 
 Or even this?
 
 ``` ruby
-  lambda { @session.reload }.should.raise(ActiveRecord::RecordNotFound)
+lambda { @session.reload }.should.raise(ActiveRecord::RecordNotFound)
 ```
 
 I still see this sometimes. Please stop. Since [2009(!)](https://github.com/rails/rails/commit/7034272354ad41dd4d1c90138a79e7f14ebc2bed#diff-391caa9b9464021e932ebf657fa9b13cR2496), there's something called `ActiveRecord::Base#destroyed?`, which will allow you to ask the model instance if it was destroyed, so you don't have to check your database if the record is actually gone:
