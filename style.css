@@ -23,13 +23,15 @@ body, h1, h2, code, pre{
 h1 a:first-child, h2, h2 code{
   font-size: 20px;
   line-height: 24px;
+}
+
+h1 a{
   font-weight: 500;
 }
 
 header{
   margin-bottom: 50px;
 }
-
 
 a{
   color: inherit;
@@ -58,6 +60,11 @@ footer, time{
   font-size: 75%;
 }
 
+time{
+  display: block;
+  margin-top: 15px;
+}
+
 code, pre{
   font-family: Inconsolata, Monaco;
 }
@@ -68,6 +75,11 @@ ol{
 
 li{
   list-style: none;
+  border-bottom: 1px solid #eee;
+}
+
+article{
+  border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
 
