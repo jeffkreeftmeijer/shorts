@@ -1,0 +1,15 @@
+<h2 class="<%= @current.metadata['type'] || 'other' %>">
+  <% if type = @current.metadata['type'] %>
+    <span><%= type %>: </span>
+  <% end %>
+
+  <%= @current.metadata['title'] %></h2>
+
+<time datetime="<%= @current.metadata['date'] %>"><%= @current.metadata['date'] %></time>
+
+<article>
+  <%= yield %>
+</article>
+
+<iframe class="flock"></iframe>
+<script type="text/javascript" async="true" src="http://commentsbyflock.herokuapp.com/flock.js"></script>
