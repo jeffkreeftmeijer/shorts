@@ -2,10 +2,10 @@
   <% if type = @current.metadata['type'] %>
     <span><%= type %>: </span>
   <% end %>
-
-  <%= @current.metadata['title'] %></h2>
-
+  <%= @current.metadata['title'] %>
+</h2>
 
 <article>
+  <time datetime="<%= @current.metadata['date'] %>"><%= @current.metadata['date'] %></time>
   <%= yield %>
 </article>
