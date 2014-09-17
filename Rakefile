@@ -19,7 +19,7 @@ task :upload do
 
   output_directory = Pathname.new('_output')
   files = Dir["#{output_directory }/**/*"].reject { |file| File.directory?(file) }
-  bucket = service.buckets["wtf.jeffkreeftmeijer.com"]
+  bucket = service.buckets["shorts.jeffkreeftmeijer.com"]
 
   files.each do |file|
     pathname = Pathname.new(file).relative_path_from(output_directory)

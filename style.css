@@ -26,22 +26,15 @@ h1 a:first-child, h2, h2 code{
   font-weight: 500;
 }
 
-h1{
+header{
   margin-bottom: 50px;
 }
+
 
 a{
   color: inherit;
   text-decoration: none;
-}
-
-article a{
   font-weight: 600;
-}
-
-time{
-  color: #888;
-  font-size: 75%;
 }
 
 a:hover{
@@ -50,6 +43,19 @@ a:hover{
 
 a:active{
   color: #000;
+}
+
+h2 a{
+  font-weight: 400;
+}
+
+footer{
+  margin-top: 50px;
+}
+
+footer, time{
+  color: #888;
+  font-size: 75%;
 }
 
 code, pre{
