@@ -11,9 +11,7 @@
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, user-scalable=yes">
-    <style>
-      <%= File.read('style.css') %>
-    </style>
+    <style><%= YUI::CssCompressor.new.compress(File.read('style.css')) %></style>
   </head>
   <body>
     <header>

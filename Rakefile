@@ -2,6 +2,8 @@ require 'aws-sdk'
 require 'yaml'
 require 'pathname'
 require 'dracula'
+require 'yui/compressor'
+
 
 desc "Generate the site to _output"
 task :generate do
