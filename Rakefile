@@ -3,6 +3,7 @@ require 'yaml'
 require 'pathname'
 require 'dracula'
 
+desc "Generate the site to _output"
 task :generate do
   `rm -rf _output`
   Dracula::Generator.new(File.dirname(__FILE__)).generate
@@ -32,4 +33,5 @@ task :upload do
   end
 end
 
+desc "Generate and upload to S3"
 task update: [:generate, :upload]
