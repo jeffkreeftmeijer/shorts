@@ -3,7 +3,12 @@ require 'yaml'
 require 'pathname'
 require 'dracula'
 require 'yui/compressor'
+require 'open-uri'
 
+desc "Update analytics.js"
+task :update_analytics do
+  `curl http://google-analytics.com/analytics.js -o analytics.js`
+end
 
 desc "Generate the site to _output"
 task :generate do
@@ -36,4 +41,4 @@ task :upload do
 end
 
 desc "Generate and upload to S3"
-task update: [:generate, :upload]
+task update: [:update_analytics, :generate, :upload]
