@@ -69,6 +69,11 @@ code, pre{
   font-family: Inconsolata, Monaco;
 }
 
+pre{
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 ol{
   padding: 0;
 }
