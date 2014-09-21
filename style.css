@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'linecons';
-  src: url('linecons.woff') format('woff'),
-       url('linecons.ttf') format('truetype');
+  src: url('/linecons.woff') format('woff'),
+       url('/linecons.ttf') format('truetype');
 }
 
 body{
