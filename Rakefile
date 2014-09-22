@@ -3,6 +3,7 @@ require 'yaml'
 require 'pathname'
 require 'dracula'
 require 'yui/compressor'
+require 'html_press'
 require 'open-uri'
 
 desc "Update analytics.js"
@@ -14,6 +15,20 @@ desc "Generate the site to _output"
 task :generate do
   `rm -rf _output`
   Dracula::Generator.new(File.dirname(__FILE__)).generate
+end
+
+desc "Compress HTML"
+task :compress_html do
+  output_directory = Pathname.new('_output')
+  files = Dir["#{output_directory }/**/*"].reject { |file| File.directory?(file) }
+
+  files.each do |file|
+    if File.extname(file) == '.html'
+      puts "Compressing #{file}..."
+      contents = HtmlPress.press File.read(file)
+      File.open(file, 'w') { |f| f.write contents }
+    end
+  end
 end
 
 desc "GZip html, css and javascript files"
@@ -66,4 +81,4 @@ task :upload do
 end
 
 desc "Generate and upload to S3"
-task update: [:update_analytics, :generate, :gzip, :upload]
+task update: [:update_analytics, :generate, :compress_html, :gzip, :upload]
