@@ -65,9 +65,9 @@ task :upload do
 
     options[:content_type] = 'text/html' if extname == '.html'
     options[:content_type] = 'text/css' if extname == '.css'
+    options[:content_type] = 'text/javascript' if extname == '.js'
 
     if ['.js', '.ico'].include? extname
-      options[:content_type] = 'text/javascript'
       options[:cache_control] = 'max-age=2592000'
     end
 
