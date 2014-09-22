@@ -16,6 +16,18 @@ task :generate do
   Dracula::Generator.new(File.dirname(__FILE__)).generate
 end
 
+desc "GZip html, css and javascript files"
+task :gzip do
+  output_directory = Pathname.new('_output')
+  files = Dir["#{output_directory }/**/*"].reject { |file| File.directory?(file) }
+
+  files.each do |file|
+    if ['.html', '.css', '.js'].include? File.extname(file)
+      `gzip -9 #{file} && mv #{file}.gz #{file}`
+    end
+  end
+end
+
 desc "Upload to S3"
 task :upload do
   load 'env.rb'
@@ -33,7 +45,19 @@ task :upload do
     pathname = Pathname.new(file).relative_path_from(output_directory)
 
     options = {:acl => :public_read}
-    options[:content_type] = 'text/html' if File.extname(file) == '.html'
+
+    extname = File.extname(file)
+
+    options[:content_type] = 'text/html' if extname == '.html'
+    options[:content_type] = 'text/css' if extname == '.css'
+    if extname == '.js'
+      options[:content_type] = 'text/javascript'
+      options[:cache_control] = 'max-age=2592000'
+    end
+
+    if ['.html', '.css', '.js'].include? File.extname(file)
+      options[:content_encoding] = 'gzip'
+    end
 
     puts "Uploading #{pathname} with options: #{options}..."
     bucket.objects[pathname].write(File.read(file), options)
@@ -41,4 +65,4 @@ task :upload do
 end
 
 desc "Generate and upload to S3"
-task update: [:update_analytics, :generate, :upload]
+task update: [:update_analytics, :generate, :gzip, :upload]
