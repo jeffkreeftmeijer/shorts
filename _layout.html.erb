@@ -5,9 +5,11 @@
         <% if type = @current.metadata['type'] %>
           <%= type %>:
         <% end %>
-        <%= title.gsub(/<[^>]*>/, '') %> —
+
+        <%= title = title.gsub(/<[^>]*>/, '') %>
+      <% else %>
+        Shorts. by Jeff Kreeftmeijer
       <% end %>
-      Shorts. by Jeff Kreeftmeijer
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, user-scalable=yes">
