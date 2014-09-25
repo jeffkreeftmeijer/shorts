@@ -38,6 +38,7 @@ task :gzip do
 
   files.each do |file|
     if ['.html', '.css', '.js'].include? File.extname(file)
+      puts "GZipping #{file}..."
       `gzip -9 #{file} && mv #{file}.gz #{file}`
     end
   end
