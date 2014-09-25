@@ -76,6 +76,10 @@ task :upload do
       options[:content_encoding] = 'gzip'
     end
 
+    if pathname.to_s == 'feed.xml'
+      options[:website_redirect_location] = 'http://feedpress.me/shorts'
+    end
+
     puts "Uploading #{pathname} with options: #{options}..."
     bucket.objects[pathname].write(File.read(file), options)
   end
