@@ -1,5 +1,6 @@
 <ol>
   <% @articles.sort{ |a| a.metadata['date'] }.each do |article| %>
+    <time datetime="<%= article.metadata['date'] %>"><%= article.metadata['date'] %></time>
     <li class="<%= article.metadata['type'].downcase || "other"%> article">
       <h2>
         <a href="<%= article.url %>">

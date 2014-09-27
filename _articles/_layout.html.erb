@@ -1,3 +1,4 @@
+<time datetime="<%= @current.metadata['date'] %>"><%= @current.metadata['date'] %></time>
 <h2 class="<%= @current.metadata['type'] || 'other' %>">
   <% if type = @current.metadata['type'] %>
     <span><%= type %>: </span>
@@ -6,6 +7,5 @@
 </h2>
 
 <article>
-  <time datetime="<%= @current.metadata['date'] %>"><%= @current.metadata['date'] %></time>
   <%= yield %>
 </article>
