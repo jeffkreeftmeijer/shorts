@@ -3,7 +3,7 @@
     <title>
       <% if title = @current.metadata['title'] %>
         <% if type = @current.metadata['type'] %>
-          <%= type %>:
+          <%= type %>: 
         <% end %>
 
         <%= title = title.gsub(/<[^>]*>/, '') %>
