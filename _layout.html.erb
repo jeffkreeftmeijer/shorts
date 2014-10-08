@@ -2,11 +2,7 @@
   <head>
     <title>
       <% if title = @current.metadata['title'] %>
-        <% if type = @current.metadata['type'] %>
-          <%= type %>: 
-        <% end %>
-
-        <%= title = title.gsub(/<[^>]*>/, '') %>
+        <% if type = @current.metadata['type'] %><%= type %>:<% end %> <%= title = title.gsub(/<[^>]*>/, '') %>
       <% else %>
         Shorts. by Jeff Kreeftmeijer
       <% end %>
