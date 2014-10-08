@@ -1,3 +1,4 @@
 title: Take screenshots without status bars with UIAutomation
 date: 2014-09-25
+description: App Store screenshots without the status bars, using UIAutomation's captureRectWithName.
 type: iOS

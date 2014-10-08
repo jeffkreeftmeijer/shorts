@@ -1,3 +1,4 @@
 title: Automatically remove magic encoding comments
 date: 2014-10-02
+description: A simple script that removes the Ruby 1.9 magic encoding comments from your project.
 type: Ruby

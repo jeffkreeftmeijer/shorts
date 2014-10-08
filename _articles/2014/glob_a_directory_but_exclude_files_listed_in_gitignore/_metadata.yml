@@ -1,3 +1,4 @@
 title: Glob a directory, but exclude files listed in <code>.gitignore</code>
 date: 2014-09-18
 type: Ruby
+description: Get a list of files in a directory, without anything listed in the .gitignore file.

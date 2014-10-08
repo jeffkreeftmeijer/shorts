@@ -1,4 +1,4 @@
-As one of the iPhone/iPad apps we're working on is coming close to release, I looked into automatically taking App Store screenshots this week.
+I looked into automatically taking App Store screenshots this week.
 
 To get [the simplest thing that would work](https://gist.github.com/jeffkreeftmeijer/962170d4b533e5c5e3d5), I distilled the essential parts from [ui-screen-shooter]( https://github.com/jonathanpenn/ui-screen-shooter) and ended up with a Ruby file that spawns simulators in different device languages and some javascript that uses [UIAutomation](https://developer.apple.com/library/ios/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html) to run through the application and take the actual screenshots.
 
