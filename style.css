@@ -120,6 +120,10 @@ h2:before, li.article:before{
   content: "";
 }
 
+.javascript:before{
+  content: "\e011";
+}
+
 iframe{
   width: 100%;
   border: none;
