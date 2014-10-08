@@ -80,6 +80,22 @@ task :upload do
       options[:website_redirect_location] = 'http://feedpress.me/shorts'
     end
 
+    if pathname.to_s == '2015/automatically_remove_magic_encoding_comments/index.html'
+      options[:website_redirect_location] = '/2014/automatically_remove_magic_encoding_comments'
+    end
+
+    if pathname.to_s == '2015/glob_a_directory_but_exclude_files_listed_in_gitignore/index.html'
+      options[:website_redirect_location] = '/2014/glob_a_directory_but_exclude_files_listed_in_gitignore'
+    end
+
+    if pathname.to_s == '2015/check_if_a_model_instance_is_destroyed/index.html'
+      options[:website_redirect_location] = '/2014/check_if_a_model_instance_is_destroyed'
+    end
+
+    if pathname.to_s == '2015/taking_screenshots_without_status_bars_with_uiautomation/index.html'
+      options[:website_redirect_location] = '/2014/taking_screenshots_without_status_bars_with_uiautomation'
+    end
+
     puts "Uploading #{pathname} with options: #{options}..."
     bucket.objects[pathname].write(File.read(file), options)
   end
