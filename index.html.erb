@@ -1,5 +1,5 @@
 <ol>
-  <% @articles.sort_by{ |a| a.metadata['date'] }.reverse.each do |article| %>
+  <% @articles.reject{ |a| a.metadata['date'].nil? }.sort_by{ |a| a.metadata['date'] }.reverse.each do |article| %>
     <time datetime="<%= article.metadata['date'] %>"><%= article.metadata['date'] %></time>
     <li class="<%= article.metadata['type'].downcase || "other"%> article">
       <h2>

@@ -6,7 +6,7 @@
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
-  <% @articles.sort_by { |a| a.metadata['date'] }.reverse.each do |article| %>
+  <% @articles.reject{ |a| a.metadata['date'].nil? }.sort_by{ |a| a.metadata['date'] }.reverse.each do |article| %>
   <url>
     <loc>http://shorts.jeffkreeftmeijer.com<%= article.url %>/</loc>
     <lastmod><%= article.metadata['date'].strftime('%Y-%m-%d') %></lastmod>
