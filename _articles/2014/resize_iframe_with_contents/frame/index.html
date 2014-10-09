@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+  body{
+    margin: 0;
+  }
+
+  div{
+    padding: 10px 10px 10px 10px;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <button type="button" class="add">Add item</button>
+    <button type="button" class="remove">Remove item</button>
+
+    <ol>
+      <li>I'm a line item in an iframe that resizes based on its contents.</li>
+    </ol>
+  </div>
+
+  <script src="/zepto.min.js"></script>
+  <script>
+    sendHeight = function(){
+      height = $('div').height()
+      window.parent.postMessage({"height": height}, "*")
+    }
+
+    $(document).ready(function(){
+      $(window).on('resize', sendHeight)
+
+      $(document).
+        on('click', 'button.add', function(){
+          $('ol').append("<li>I'm a line item in an iframe that resizes based on its contents.</li>")
+          sendHeight()
+        }).
+        on('click', 'button.remove', function(){
+          $('ol li:last-child').remove()
+          sendHeight()
+        })
+      })
+  </script>
+  </body>
+</html>
