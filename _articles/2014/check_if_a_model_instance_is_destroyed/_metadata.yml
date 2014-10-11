@@ -1,4 +1,4 @@
-title: Check if a model instance is destroyed
+title: Check if an ActiveRecord model instance is destroyed
 type: Rails
 description: Test if an model instance is destroyed using ActiveRecord::Base#destroyed? and without using lambdas.
 date: 2014-09-11
