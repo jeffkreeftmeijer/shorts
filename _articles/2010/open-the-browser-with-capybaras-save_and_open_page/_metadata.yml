@@ -1,5 +1,5 @@
 title: Open the browser with Capybara's <code>save_and_open_page</code>
 date: 2010-11-18
 type: Ruby
-description: 
+description: Capybara provides a method named save_and_open_page, that saves the page and opens it in your browser.
 hidden: true

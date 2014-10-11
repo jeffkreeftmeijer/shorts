@@ -13,5 +13,3 @@ it 'should register successfully' do
   fill_in 'username', :with => 'jkreeftmeijer'
 end
 ```
-
-I hope this helps someone, it would have saved me a *lot* of time.
