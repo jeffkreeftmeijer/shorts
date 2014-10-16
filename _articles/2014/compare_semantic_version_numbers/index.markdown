@@ -1,1 +1,0 @@
-I needed to compare version numbers with pessimistic constraints in Ruby without [having to include `Gem::Version`](http://stackoverflow.com/a/3064161/325603) or [doing hacky things with `Gem::Dependency`](http://stackoverflow.com/a/17449664/325603).

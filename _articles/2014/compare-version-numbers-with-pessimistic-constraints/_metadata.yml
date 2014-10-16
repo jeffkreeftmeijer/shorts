@@ -1,0 +1,4 @@
+title: Compare version numbers with pessimistic constraints
+type: Ruby
+date: 2014-10-16
+description: Comparing version numbers in Ruby, with pessimistic constraints, but without depending on Rubygems.
